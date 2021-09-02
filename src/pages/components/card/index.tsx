@@ -1,12 +1,24 @@
 import React from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
-
 interface PropTypes {
   name: string;
   image: string;
   description: string;
 }
+
+const matchColor = (props: PropTypes) => {
+  const name: string = props.name.toLowerCase();
+  if (name === "supervisor") {
+    return "#45d3d3";
+  } else if (name === "calculator") {
+    return "#549ef2";
+  } else if (name === "karma") {
+    return "#fcaf4a";
+  } else {
+    return "#ea5353";
+  }
+};
 
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
@@ -17,26 +29,27 @@ const useStyles = makeStyles((theme: Theme) => {
       height: "260px",
       backgroundColor: "#fff",
       boxShadow: "0px 0px 28px -13px rgba(0, 0, 0, 0.6)",
+      borderTop: "4px solid",
+      borderTopColor: (props: PropTypes) => matchColor(props),
     },
     title: {
       opacity: 0.7,
       fontSize: "1.4em",
     },
     supervisor: {
-      borderTop: "lighten(rgba(82, 177, 207, 0.8), 1%) solid 0.3rem",
+      borderTop: "rgba(82, 177, 207, 0.8) solid 0.3rem",
     },
   });
 });
 
-const Card = ({ name, image, description }: PropTypes) => {
-  const classes = useStyles();
+const Card = (props: PropTypes) => {
+  const classes = useStyles(props);
+  const { name, image, description } = props;
   return (
-    <div className={`${classes.root} ${name}`}>
-      <h2 className={classes.title}>Supervisor</h2>
-      <p className='card-text'>
-        Monitors activity to identify project roadblocks
-      </p>
-      <img className='supervisor-img' src={} alt='' />
+    <div className={classes.root}>
+      <h2 className={classes.title}>{name}</h2>
+      <p className='card-text'>{description}</p>
+      <img className='supervisor-img' src={image} alt='' />
     </div>
   );
 };
