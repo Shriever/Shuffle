@@ -9,7 +9,16 @@ module.exports = {
       resolve: "gatsby-plugin-react-svg",
       options: {
         rule: {
-          include: /\.inline\.svg$/
+          include: /\.inline\.svg$/,
+        },
+        options: {
+          tag: "symbol",
+          name: "MyIcon",
+          props: {
+            className: "my-class",
+            title: "example",
+          },
+          filters: [value => console.log(value)],
         },
       },
     },

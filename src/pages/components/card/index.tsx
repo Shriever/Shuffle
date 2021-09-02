@@ -1,9 +1,9 @@
-import React from "react";
+import React, { SVGProps, ReactElement } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 interface PropTypes {
   name: string;
-  image: string;
+  Image: (props: SVGProps<SVGElement>) => ReactElement;
   description: string;
 }
 
@@ -44,12 +44,13 @@ const useStyles = makeStyles((theme: Theme) => {
 
 const Card = (props: PropTypes) => {
   const classes = useStyles(props);
-  const { name, image, description } = props;
+  const { name, Image, description } = props;
   return (
     <div className={classes.root}>
       <h2 className={classes.title}>{name}</h2>
       <p className='card-text'>{description}</p>
-      <img className='supervisor-img' src={image} alt='' />
+      {/* <img className='supervisor-img' src={Image} alt='' /> */}
+      <Image className={classes.title} />
     </div>
   );
 };
