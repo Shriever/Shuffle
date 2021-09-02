@@ -26,15 +26,15 @@ const matchColor = (props: PropTypes) => {
 const useStyles = makeStyles((theme: Theme) => {
   return createStyles({
     root: {
-      marginBottom: "2rem",
-      padding: "2rem 2rem 5rem 2rem",
-      borderRadius: "8px",
-      height: "176px",
       backgroundColor: "#fff",
-      boxShadow: "0px 0px 28px -13px rgba(0, 0, 0, 0.6)",
+      borderRadius: "8px",
       borderTop: "4px solid",
       borderTopColor: (props: PropTypes) => matchColor(props),
+      boxShadow: "0px 0px 28px -13px rgba(0, 0, 0, 0.6)",
+      height: "176px",
+      marginBottom: "2rem",
       minWidth: 493,
+      padding: "2rem 2rem 5rem 2rem",
       position: "absolute",
       transform: "translate(-50%, -50%)",
       transition: "1s",
@@ -55,16 +55,16 @@ const useStyles = makeStyles((theme: Theme) => {
       top: "25%",
     },
     right: {
-      top: "50%",
       left: "82.5%",
+      top: "50%",
     },
     bottom: {
       left: "50%",
       top: "75%",
     },
     left: {
-      top: "50%",
       left: "17.5%",
+      top: "50%",
     },
   });
 });

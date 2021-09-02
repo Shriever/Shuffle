@@ -44,7 +44,7 @@ export const crazy = (prevState: positionType[]) => {
 export default [
   { fn: swapTopAndBottom, title: "Swap Top and Bottom" },
   { fn: swapLeftAndRight, title: "Swap Left and Right" },
+  { fn: crazy, title: "Let's Get Crazy" },
   { fn: rotateClockwise, title: "Rotate Clockwise" },
   { fn: rotateCounterClockwise, title: "Rotate Counter-Clockwise" },
-  { fn: crazy, title: "Let's Get Crazy" },
 ];

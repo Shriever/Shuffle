@@ -18,7 +18,6 @@ module.exports = {
             className: "my-class",
             title: "example",
           },
-          filters: [value => console.log(value)],
         },
       },
     },
