@@ -31,31 +31,47 @@ const useStyles = makeStyles((theme: Theme) => {
       borderTop: "4px solid",
       borderTopColor: (props: PropTypes) => matchColor(props),
       boxShadow: "0px 0px 28px -13px rgba(0, 0, 0, 0.6)",
-      height: "176px",
+      height: "20%",
       marginBottom: "2rem",
-      minWidth: 493,
+      width: "23%",
       padding: "2rem 2rem 5rem 2rem",
       position: "absolute",
       transform: "translate(-50%, -50%)",
       transition: "1s",
+      [theme.breakpoints.down("sm")]: {
+        backgroundColor: (props: PropTypes) => matchColor(props),
+        height: 50,
+        width: 50,
+      },
     },
     title: {
       opacity: 0.7,
       fontSize: "1.4em",
+      [theme.breakpoints.down("sm")]: {
+        display: "none",
+      },
     },
-    supervisor: {
-      borderTop: "rgba(82, 177, 207, 0.8) solid 0.3rem",
+    description: {
+      [theme.breakpoints.down("sm")]: {
+        display: "none",
+      },
     },
     icon: {
       float: "right",
       marginTop: 60,
+      [theme.breakpoints.down("lg")]: {
+        marginTop: 0
+      },
+      [theme.breakpoints.down("sm")]: {
+        display: "none",
+      },
     },
     top: {
       left: "50%",
       top: "25%",
     },
     right: {
-      left: "82.5%",
+      left: "80%",
       top: "50%",
     },
     bottom: {
@@ -63,7 +79,7 @@ const useStyles = makeStyles((theme: Theme) => {
       top: "75%",
     },
     left: {
-      left: "17.5%",
+      left: "20%",
       top: "50%",
     },
   });
@@ -88,7 +104,7 @@ const Card = (props: PropTypes) => {
   return (
     <div className={`${classes.root} ${determinePosition(position)}`}>
       <h2 className={classes.title}>{name}</h2>
-      <p className='card-text'>{description}</p>
+      <p className={classes.description}>{description}</p>
       <Image className={classes.icon} />
     </div>
   );

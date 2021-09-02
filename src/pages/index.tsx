@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 
 import KarmaIcon from "./../images/icon-karma.inline.svg";
@@ -36,7 +36,7 @@ const cards = [
   },
 ];
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   "@global": {
     body: {
       margin: 0,
@@ -57,9 +57,15 @@ const useStyles = makeStyles({
   },
   btn: {
     backgroundColor: "#02ee9a",
-    fontSize: 20,
+    fontSize: 16,
     margin: "0 15px",
     transition: "0.5s",
+
+    [theme.breakpoints.down("sm")]: {
+      fontSize: 10,
+      margin: "0 2px",
+      width: "18%",
+    },
     "&:hover": {
       backgroundColor: "#02cbee",
     },
@@ -70,7 +76,11 @@ const useStyles = makeStyles({
       },
     },
   },
-});
+  cardsContainer: {
+    height: "80%",
+    position: "relative",
+  },
+}));
 
 const IndexPage = () => {
   const classes = useStyles();
@@ -96,9 +106,11 @@ const IndexPage = () => {
           );
         })}
       </div>
-      {cards.map((card, idx) => {
-        return <Card key={card.name} {...card} position={positions[idx]} />;
-      })}
+      <div className={classes.cardsContainer}>
+        {cards.map((card, idx) => {
+          return <Card key={card.name} {...card} position={positions[idx]} />;
+        })}
+      </div>
     </div>
   );
 };
