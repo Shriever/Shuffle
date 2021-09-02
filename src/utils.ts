@@ -1,4 +1,4 @@
-import { positionType } from "./";
+import { positionType } from "./pages";
 
 export const swapTopAndBottom = (prevState: positionType[]) => {
   const topIdx = prevState.findIndex(el => el === "top");

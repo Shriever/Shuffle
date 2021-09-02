@@ -7,7 +7,7 @@ import SupervisorIcon from "./../images/icon-supervisor.inline.svg";
 import CalculatorIcon from "./../images/icon-calculator.inline.svg";
 import TeamBuilderIcon from "./../images/icon-team-builder.inline.svg";
 import Card from "./components/card";
-import utils from "./utils";
+import utils from "../utils";
 
 export type positionType = "top" | "right" | "bottom" | "left";
 
