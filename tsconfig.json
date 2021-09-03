@@ -99,6 +99,5 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   // "include": ["src/pages/", "src/custom.d.ts", "src/**/*.tsx"]
-
   "include": ["src/**/*"]
 }

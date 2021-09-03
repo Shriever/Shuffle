@@ -5,6 +5,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-gatsby-cloud",
+    "gatsby-plugin-material-ui",
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
