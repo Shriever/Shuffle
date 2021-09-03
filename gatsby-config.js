@@ -4,6 +4,7 @@ module.exports = {
     title: "shuffle",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     "gatsby-plugin-gatsby-cloud",
     "gatsby-plugin-material-ui",
     {

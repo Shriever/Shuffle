@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
+import { Helmet } from "react-helmet";
 
 import Card from "./Card";
 import utils from "../utils";
@@ -90,6 +91,14 @@ const IndexPage = () => {
 
   return (
     <div className={classes.root}>
+      <Helmet>
+        <link
+          rel='shortcut icon'
+          href='https://img.icons8.com/ios-glyphs/30/000000/macbook.png'
+          type='image/x-icon'
+        />
+        <title>Shuffle</title>
+      </Helmet>
       <div className={classes.buttonContainer}>
         {utils.map(util => {
           return (
