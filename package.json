@@ -23,5 +23,12 @@
     "gatsby-plugin-react-svg": "^3.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.30.0",
+    "@typescript-eslint/parser": "^4.30.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.25.1",
+    "typescript": "^4.4.2"
   }
 }

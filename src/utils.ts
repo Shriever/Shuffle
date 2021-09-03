@@ -48,3 +48,19 @@ export default [
   { fn: rotateClockwise, title: "Rotate Clockwise" },
   { fn: rotateCounterClockwise, title: "Rotate Counter-Clockwise" },
 ];
+
+export const matchColor = (name: string) => {
+  if (!name) {
+    return "#45d3d3";
+  }
+  const lowerName: string = name.toLowerCase();
+  if (lowerName === "supervisor") {
+    return "#45d3d3";
+  } else if (lowerName === "calculator") {
+    return "#549ef2";
+  } else if (lowerName === "karma") {
+    return "#fcaf4a";
+  } else {
+    return "#ea5353";
+  }
+};

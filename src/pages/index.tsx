@@ -6,7 +6,7 @@ import KarmaIcon from "./../images/icon-karma.inline.svg";
 import SupervisorIcon from "./../images/icon-supervisor.inline.svg";
 import CalculatorIcon from "./../images/icon-calculator.inline.svg";
 import TeamBuilderIcon from "./../images/icon-team-builder.inline.svg";
-import Card from "./components/card";
+import Card from "./Card";
 import utils from "../utils";
 
 export type positionType = "top" | "right" | "bottom" | "left";

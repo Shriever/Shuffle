@@ -1,7 +1,9 @@
-import React, { SVGProps, ReactElement } from "react";
+import * as React from "react";
+import { SVGProps, ReactElement } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
-import { positionType } from "./../../";
+import { positionType } from "./";
+import { matchColor } from "./../utils";
 
 interface PropTypes {
   name: string;
@@ -10,26 +12,13 @@ interface PropTypes {
   position: positionType;
 }
 
-const matchColor = (props: PropTypes) => {
-  const name: string = props.name.toLowerCase();
-  if (name === "supervisor") {
-    return "#45d3d3";
-  } else if (name === "calculator") {
-    return "#549ef2";
-  } else if (name === "karma") {
-    return "#fcaf4a";
-  } else {
-    return "#ea5353";
-  }
-};
-
-const useStyles = makeStyles((theme: Theme) => {
+const useStyles = makeStyles<Theme, PropTypes>(theme => {
   return createStyles({
     root: {
       backgroundColor: "#fff",
       borderRadius: "8px",
       borderTop: "4px solid",
-      borderTopColor: (props: PropTypes) => matchColor(props),
+      borderTopColor: props => matchColor(props.name),
       boxShadow: "0px 0px 28px -13px rgba(0, 0, 0, 0.6)",
       height: "20%",
       marginBottom: "2rem",
@@ -39,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) => {
       transform: "translate(-50%, -50%)",
       transition: "1s",
       [theme.breakpoints.down("sm")]: {
-        backgroundColor: (props: PropTypes) => matchColor(props),
+        backgroundColor: props => matchColor(props.name),
         height: 50,
         width: 50,
       },
@@ -60,7 +49,7 @@ const useStyles = makeStyles((theme: Theme) => {
       float: "right",
       marginTop: 60,
       [theme.breakpoints.down("lg")]: {
-        marginTop: 0
+        marginTop: 0,
       },
       [theme.breakpoints.down("sm")]: {
         display: "none",
@@ -85,7 +74,7 @@ const useStyles = makeStyles((theme: Theme) => {
   });
 });
 
-const Card = (props: PropTypes) => {
+const Card: (props: PropTypes) => JSX.Element = props => {
   const classes = useStyles(props);
   const { name, Image, description, position } = props;
 
