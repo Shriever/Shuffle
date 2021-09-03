@@ -2,36 +2,33 @@ import React, { useState } from "react";
 import { makeStyles, Theme } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core";
 
-import KarmaIcon from "./../images/icon-karma.inline.svg";
-import SupervisorIcon from "./../images/icon-supervisor.inline.svg";
-import CalculatorIcon from "./../images/icon-calculator.inline.svg";
-import TeamBuilderIcon from "./../images/icon-team-builder.inline.svg";
 import Card from "./Card";
 import utils from "../utils";
 
 export type positionType = "top" | "right" | "bottom" | "left";
 
-const cards = [
+interface ICard {
+  name: string;
+  description: string;
+}
+
+const cards: ICard[] = [
   {
     name: "Karma",
-    Image: KarmaIcon,
     description: "Regularly evaluates our talent to ensure quality",
   },
   {
     name: "Team Builder",
-    Image: TeamBuilderIcon,
     description:
       "Scans our talent network to create the optimal team for your project",
   },
   {
     name: "Calculator",
-    Image: CalculatorIcon,
     description:
       "Uses data from past projects to provide better delivery estimates",
   },
   {
     name: "Supervisor",
-    Image: SupervisorIcon,
     description: "Monitors activity to identify project roadblocks",
   },
 ];

@@ -1,13 +1,15 @@
 import * as React from "react";
-import { SVGProps, ReactElement } from "react";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 import { positionType } from "./";
 import { matchColor } from "./../utils";
+import KarmaIcon from "./../images/icon-karma.inline.svg";
+import SupervisorIcon from "./../images/icon-supervisor.inline.svg";
+import CalculatorIcon from "./../images/icon-calculator.inline.svg";
+import TeamBuilderIcon from "./../images/icon-team-builder.inline.svg";
 
 interface PropTypes {
   name: string;
-  Image: (props: SVGProps<SVGElement>) => ReactElement;
   description: string;
   position: positionType;
 }
@@ -76,7 +78,7 @@ const useStyles = makeStyles<Theme, PropTypes>(theme => {
 
 const Card: (props: PropTypes) => JSX.Element = props => {
   const classes = useStyles(props);
-  const { name, Image, description, position } = props;
+  const { name, description, position } = props;
 
   const determinePosition = (position: positionType) => {
     if (position === "top") {
@@ -94,7 +96,10 @@ const Card: (props: PropTypes) => JSX.Element = props => {
     <div className={`${classes.root} ${determinePosition(position)}`}>
       <h2 className={classes.title}>{name}</h2>
       <p className={classes.description}>{description}</p>
-      <Image className={classes.icon} />
+      {name === "Supervisor" && <SupervisorIcon className={classes.icon} />}
+      {name === "Karma" && <KarmaIcon className={classes.icon} />}
+      {name === "Calculator" && <CalculatorIcon className={classes.icon} />}
+      {name === "Team Builder" && <TeamBuilderIcon className={classes.icon} />}
     </div>
   );
 };
